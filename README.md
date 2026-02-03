@@ -118,5 +118,5 @@ streamlit run app.py
 
 The diagram below illustrates the complete workflow of the AI-Assisted EDA Engine, from dataset upload to insights and visualization.
 
-![AI-Assisted EDA Workflow](workflow.png)
+![AI-Assisted EDA Workflow](Workflow.png)
 
