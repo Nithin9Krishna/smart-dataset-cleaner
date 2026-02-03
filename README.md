@@ -1,110 +1,114 @@
 # AI-Assisted Data Quality & Exploratory Data Analysis (EDA) Engine
 
-An interactive, AI-assisted data analysis application that helps users quickly understand the **quality, structure, and readiness of datasets** before analytics or machine learning.  
-The system combines **statistical analysis**, **intelligent rule-based reasoning**, and **interactive visualizations** through a clean Streamlit interface.
+This project is an interactive data analysis tool built to help quickly understand the **quality and structure of a dataset** before using it for analytics or machine learning.  
+It focuses on clarity, usability, and explainability rather than generating large automated reports.
+
+The application is built using Python and Streamlit and is designed to work with **any CSV dataset**, including large files.
 
 ---
 
-## 📌 Problem Statement
+## Why I Built This
 
-In real-world data projects, a significant amount of time is spent on:
-- Understanding dataset structure
-- Identifying missing values and anomalies
-- Deciding appropriate preprocessing steps
-- Communicating dataset readiness to stakeholders
+In most real-world data projects, the first challenge is not modeling — it is understanding the data.
 
-Most traditional EDA tools either:
-- Generate overwhelming reports, or
-- Provide raw statistics without actionable insights
+Common questions usually include:
+- Is the data clean?
+- Are there missing values or anomalies?
+- What type of features does the dataset contain?
+- Is the data even suitable for machine learning?
 
-This project addresses that gap by offering a **guided, explainable, and user-controlled EDA workflow**.
-
----
-
-## 🎯 Project Objective
-
-The goal of this project is to build a **lightweight yet powerful EDA engine** that:
-- Works for **any CSV dataset**
-- Scales to **large datasets**
-- Avoids black-box AI behavior
-- Produces **clear, human-readable insights**
-
-Rather than replacing analysts, this tool **assists decision-making** by summarizing data quality and readiness.
+Many EDA tools either overwhelm users with too many statistics or provide raw numbers without context.  
+This project aims to solve that by providing **guided, readable insights** that help users make decisions faster.
 
 ---
 
-## 🧠 What This Application Does
+## What the Application Does
 
-Once a dataset is uploaded, the application performs the following:
+After uploading a CSV file, the application performs a series of controlled analyses that work for most datasets.
 
-### 1️⃣ Dataset Overview
-- Number of rows and columns
-- Column names
-- Data types (numerical vs categorical)
+### Dataset Overview
+- Displays number of rows and columns
+- Lists column names
+- Identifies data types (numerical vs categorical)
 
-### 2️⃣ Missing Value Analysis
-- Detects missing values per column
-- Computes missing percentages
-- Provides a clean tabular summary
+This gives an immediate understanding of the dataset structure.
 
-### 3️⃣ Outlier Detection
-- Applies IQR-based statistical outlier detection
-- Works automatically on numerical features
-- Skips gracefully when no numeric data is present
+---
 
-### 4️⃣ Intelligent Cleaning Suggestions
-- Recommends actions such as:
-  - No action required
-  - Imputation
-  - Column review or removal
-- Based on data quality metrics, not assumptions
+### Missing Value Analysis
+- Detects missing values for each column
+- Calculates missing percentages
+- Presents results in a clean tabular format
 
-### 5️⃣ AI-Assisted Analytical Insights
-Instead of unconstrained language generation, the system produces **deterministic, explainable insights**, such as:
+This helps identify whether data cleaning or imputation is required.
+
+---
+
+### Outlier Detection
+- Uses an IQR-based statistical method
+- Automatically applies only to numerical columns
+- Safely skips when numerical data is limited
+
+This avoids forcing assumptions on unsuitable datasets.
+
+---
+
+### Cleaning Suggestions
+Based on data quality signals, the system provides simple recommendations such as:
+- No action needed
+- Review or impute missing values
+- Consider dropping low-quality columns
+
+These suggestions are rule-based and explainable.
+
+---
+
+### AI-Assisted Insights
+Instead of using free-form text generation, the application produces **deterministic analytical insights** derived from dataset characteristics.
+
+Examples include:
 - Overall data quality assessment
-- Suitability for analytics vs ML
-- Warnings for validation-sensitive fields (emails, phone numbers, dates)
+- Suitability for analytics vs machine learning
+- Identification of fields that may need validation (emails, phone numbers, dates)
 
-This design avoids hallucination while still providing **AI-style reasoning**.
+This approach avoids hallucination while still providing **AI-style reasoning**.
 
-### 6️⃣ Universal Visual Explorations
-The application includes a small set of **dataset-agnostic visualizations**:
+---
+
+### Visual Explorations
+The application includes a small set of visualizations that are useful across most datasets:
 - Missing values heatmap
 - Numerical feature distributions
-- Categorical value dominance
+- Categorical value dominance charts
 - Correlation heatmap (when applicable)
 
-These visuals work reliably across most datasets without requiring domain assumptions.
+These visuals help users quickly spot patterns without cluttering the interface.
 
 ---
 
-## 🖥️ User Interface Highlights
+## User Experience
 
-- Streamlit-based interactive UI
-- Sidebar controls to selectively run analyses
-- Optional visualizations (user-controlled)
-- Clear separation between statistics, insights, and visuals
+- Built with Streamlit for simplicity and speed
+- Sidebar controls allow users to select which analyses to run
+- Visualizations are optional and user-controlled
+- Works well for both small and large datasets
 
-This makes the tool suitable for:
-- Data scientists
-- Analysts
-- Students
-- Quick stakeholder demos
+The interface is designed to be practical rather than flashy.
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
-- **Language:** Python  
-- **Data Processing:** Pandas, NumPy  
-- **Visualization:** Matplotlib, Seaborn  
-- **UI Framework:** Streamlit  
+- **Python**
+- **Pandas & NumPy** for data processing
+- **Matplotlib & Seaborn** for visualization
+- **Streamlit** for the interactive UI
 
-No external APIs or cloud dependencies are required.
+No external APIs or cloud services are required.
 
 ---
 
-## 🚀 How to Run the Application
+## How to Run the Project
 
 ```bash
 pip install -r requirements.txt
